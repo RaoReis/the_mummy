@@ -1,0 +1,68 @@
+@mixin baixo($height: 85px) {
+    height: $height;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.movies {
+    padding: 2vw 5.6vw;
+
+    @media (max-width: 768px) {
+        margin-top: 50px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 8px;
+
+        @media (max-width: 768px) {
+            display: block;
+        }
+    
+    
+        &__item {
+            text-align: center;
+            padding: 60px 44px 0 44px;
+            max-width: 380px;
+            width: 100%;
+
+            @media (max-width: 768px) {
+                    margin-bottom: 50px;
+            }
+
+            .baixo1 {
+                @include baixo;
+            }
+
+            .baixo2 {
+                @include baixo(271px);
+
+                @media (max-width: 768px) {
+                    @include baixo;
+                }
+            }
+
+            .button {
+                margin-top: 16px;
+            }
+
+            img {
+                height: 400px;
+
+                @media (max-width: 768px) {
+                    width: 100%;
+                }
+            }
+
+            strong {
+                margin-top: 24px;
+            }
+        }
+    }
+}
